@@ -1,0 +1,11 @@
+/node_modules/
+/dist/
+/logs/
+/.vscode/
+
+config.yml
+yarn-error.log
+
+/generated/prisma
+
+/generated/prisma

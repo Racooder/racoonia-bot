@@ -1,0 +1,13 @@
+import { Events, type Client } from "discord.js";
+import type { EventListener } from "./index.js";
+import { debug } from "../log.js";
+
+export const Template: EventListener = {
+    start: (client: Client) => {
+        debug("Starting 'template' event listener");
+        client.on(Events.Template, async () => {
+            debug("'template' event triggered");
+            // Event handling logic goes here
+        });
+    }
+}

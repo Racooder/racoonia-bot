@@ -1,0 +1,24 @@
+{
+  "name": "discord-avalon",
+  "type": "module",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.24.2",
+    "dotenv": "^17.2.3",
+    "rustic": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.9.2",
+    "prisma": "^6.18.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsup src/index.ts --minify --format esm --out-dir dist --clean"
+  }
+}

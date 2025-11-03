@@ -1,0 +1,16 @@
+import { ApplicationCommandType, ChatInputCommandInteraction, Client } from "discord.js";
+import type { Command } from "./index.js";
+import { debug } from "../log.js";
+
+export const Template: Command = {
+    data: {
+        name: "template",
+        description: "A template command!",
+        type: ApplicationCommandType.ChatInput,
+    },
+    handler: async function execute(_client: Client, _interaction: ChatInputCommandInteraction) {
+        debug("Handling 'template' command");
+        // Command handling logic goes here
+        return [true];
+    }
+}
