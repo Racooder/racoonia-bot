@@ -3,6 +3,7 @@
 /logs/
 /.vscode/
 
+.env
 yarn-error.log
 
 /generated/prisma
