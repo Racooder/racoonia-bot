@@ -1,5 +1,4 @@
 import { ChatInputCommandInteraction, LabelBuilder, MessageFlags, TextInputBuilder, TextInputStyle } from "discord.js";
-import type { Exception } from "./exception.js";
 
 export function replyHowever(message: string, interaction: ChatInputCommandInteraction): void {
     if (interaction.replied) {

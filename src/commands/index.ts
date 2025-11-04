@@ -8,14 +8,13 @@ import { Feedback } from "./feedback.js";
 
 export type CommandHandler = (client: Client, interaction: ChatInputCommandInteraction) => Promise<Result>;
 
-export type Subcommand = {
-    handler: CommandHandler
-}
-
-export type Command = {
-    data: ChatInputApplicationCommandData;
+export interface Subcommand {
     handler?: CommandHandler;
     subcommands?: Record<string, Subcommand>;
+}
+
+export interface Command extends Subcommand {
+    data: ChatInputApplicationCommandData;
 }
 
 // Commands registry

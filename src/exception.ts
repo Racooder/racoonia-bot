@@ -1,24 +1,27 @@
 import type { ChatInputCommandInteraction } from "discord.js";
 import { replyHowever } from "./util.js";
-import { debug, warn } from "./log.js";
+import { debug, error } from "./log.js";
 
 export class Exception {
     logMessage: string;
     userReply: string;
 
-    constructor(logMessage: string, userReply: string) {
+    constructor(logMessage: string, userReply?: string) {
         this.logMessage = logMessage;
-        this.userReply = userReply;
+        this.userReply = userReply || logMessage;
     }
 
-    log(): void {
+    log(): Exception {
         debug("Logging exception");
-        warn(this.logMessage);
+        error(this.logMessage);
+        return this;
     }
 
-    reply(interaction: ChatInputCommandInteraction): void {
+    reply(interaction: ChatInputCommandInteraction): Exception {
         debug("Sending exception message to the user");
-        replyHowever(this.userReply,interaction);
+        const reply = this.userReply + " (Please report this to the developers using '/feedback'.)";
+        replyHowever(reply, interaction);
+        return this;
     }
 }
 

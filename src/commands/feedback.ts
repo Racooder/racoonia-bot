@@ -40,7 +40,7 @@ export const Feedback: Command = {
                 modal = createGeneralFeedbackModal();
                 break;
             default:
-                return [false, new Exception("Invalid feedback type selected", "An unknown feedback type was selected in the feedback command. (This should never happen. Please report this to the developers.)")];
+                return [false, new Exception("An unknown feedback type was selected in the feedback command.")];
         }
 
         await interaction.showModal(modal);
