@@ -18,9 +18,9 @@ export const Feedback: Modal = {
             handler: async function executeBugReport(interaction: ModalSubmitInteraction, _args: string[]): Promise<Result> {
                 debug("Handling 'feedback;bug_report' modal submission");
 
-                const expectedBehavior = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.expectedBehavior);
-                const actualBehavior = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.actualBehavior);
-                const stepsToReproduce = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.stepsToReproduce);
+                const expectedBehavior = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.expectedBehavior) ?? "N/A";
+                const actualBehavior = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.actualBehavior) ?? "N/A";
+                const stepsToReproduce = interaction.fields.getTextInputValue(feedbackModalFields.bugReport.stepsToReproduce) ?? "N/A";
 
                 const feedbackMessage = `**Expected Behavior:** ${expectedBehavior}\n**Actual Behavior:** ${actualBehavior}\n**Steps to Reproduce:** ${stepsToReproduce}`;
 
@@ -34,8 +34,8 @@ export const Feedback: Modal = {
             handler: async function executeFeatureRequest(interaction: ModalSubmitInteraction, _args: string[]): Promise<Result> {
                 debug("Handling 'feedback;feature_request' modal submission");
 
-                const description = interaction.fields.getTextInputValue(feedbackModalFields.featureRequest.description);
-                const otherDetails = interaction.fields.getTextInputValue(feedbackModalFields.featureRequest.otherDetails);
+                const description = interaction.fields.getTextInputValue(feedbackModalFields.featureRequest.description) ?? "N/A";
+                const otherDetails = interaction.fields.getTextInputValue(feedbackModalFields.featureRequest.otherDetails) ?? "N/A";
 
                 const feedbackMessage = `**Description:** ${description}\n**Other Details:** ${otherDetails}`;
 
@@ -49,7 +49,7 @@ export const Feedback: Modal = {
             handler: async function executeGeneralFeedback(interaction: ModalSubmitInteraction, _args: string[]): Promise<Result> {
                 debug("Handling 'feedback;general_feedback' modal submission");
 
-                const description = interaction.fields.getTextInputValue(feedbackModalFields.generalFeedback.description);
+                const description = interaction.fields.getTextInputValue(feedbackModalFields.generalFeedback.description) ?? "N/A";
 
                 const feedbackMessage = `**Description:** ${description}`;
 
