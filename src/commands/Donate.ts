@@ -15,7 +15,7 @@ export const Donate: Command = {
         type: ApplicationCommandType.ChatInput,
     },
     handler: async function execute(interaction: ChatInputCommandInteraction): Promise<Result> {
-        debug("Handling 'donate' command");
+        debug(`Handling '${this.data.name}' command`);
 
         const embed = createDonationEmbed();
         const actionRow = createDonationActionRow();

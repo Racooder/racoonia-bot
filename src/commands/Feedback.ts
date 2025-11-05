@@ -24,7 +24,7 @@ export const Feedback: Command = {
         ],
     },
     handler: async function execute(interaction: ChatInputCommandInteraction): Promise<Result> {
-        debug("Handling 'feedback' command");
+        debug(`Handling '${this.data.name}' command`);
 
         const feedbackType = interaction.options.getString("type", true);
 

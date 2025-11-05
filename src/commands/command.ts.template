@@ -6,11 +6,11 @@ import type { Result } from "../result.js";
 export const Template: Command = {
     data: {
         name: "template",
-        description: "A template command!",
+        description: "A template command",
         type: ApplicationCommandType.ChatInput,
     },
     handler: async function execute(interaction: ChatInputCommandInteraction): Promise<Result> {
-        debug("Handling 'template' command");
+        debug(`Handling '${this.data.name}' command`);
         // Command handling logic goes here
         return [true, undefined];
     }

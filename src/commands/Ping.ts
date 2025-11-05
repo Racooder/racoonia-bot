@@ -12,7 +12,7 @@ export const Ping: Command = {
         type: ApplicationCommandType.ChatInput,
     },
     handler: async function execute(interaction: ChatInputCommandInteraction): Promise<Result> {
-        debug("Handling 'ping' command");
+        debug(`Handling '${this.data.name}' command`);
         const latency = Math.abs(Date.now() - interaction.createdTimestamp);
         const apiLatency = client.ws.ping;
 
