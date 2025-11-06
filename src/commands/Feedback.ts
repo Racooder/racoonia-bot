@@ -83,13 +83,13 @@ export const feedbackModalFields = {
     bugReport: {
         expectedBehavior: "expected_behavior",
         actualBehavior: "actual_behavior",
-        stepsToReproduce: "steps_to_reproduce"
+        stepsToReproduce: "steps_to_reproduce",
     },
     featureRequest: {
         description: "description",
-        otherDetails: "other_details"
+        otherDetails: "other_details",
     },
     generalFeedback: {
-        description: "description"
-    }
-}
+        description: "description",
+    },
+} as const;
