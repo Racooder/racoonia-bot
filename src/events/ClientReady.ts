@@ -1,4 +1,4 @@
-import { ActivityType, Events, type Client } from "discord.js";
+import { ActivityType, Events } from "discord.js";
 import type { EventListener } from "./index.js";
 import { getCommandsData } from "../commands/index.js";
 // import { deployCommands } from "../deployCommands.js";

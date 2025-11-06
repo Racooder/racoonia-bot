@@ -1,4 +1,4 @@
-import { replyHowever, type ReplyableInteraction } from "./util.js";
+import { replyHowever, type ReplyableInteraction } from "./util/interaction.js";
 import { debug, warn } from "./log.js";
 
 export class Exception {

@@ -1,5 +1,5 @@
 import type { ModalSubmitInteraction } from "discord.js";
-import type { Result } from "../exception.js";
+import type { Result } from "../result.js";
 import { Feedback } from "./Feedback.js";
 
 export type ModalHandler = (interaction: ModalSubmitInteraction, args: string[]) => Promise<Result>;

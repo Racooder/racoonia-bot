@@ -2,7 +2,7 @@ import { BaseInteraction, Events, ModalSubmitInteraction, type ChatInputCommandI
 import type { EventListener } from "./index.js";
 import { COMMANDS, type Command, type CommandHandler } from "../commands/index.js";
 import { debug, error } from "../log.js";
-import { replyHowever } from "../util.js";
+import { replyHowever } from "../util/interaction.js";
 import { MODALS, type Modal, type ModalHandler, type SubModal } from "../modals/index.js";
 import { Exception } from "../exception.js";
 import client from "../client.js";

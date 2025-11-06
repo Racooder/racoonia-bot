@@ -2,7 +2,7 @@ import { ApplicationCommandOptionType, ApplicationCommandType, ChatInputCommandI
 import type { Command } from "./index.js";
 import { debug } from "../log.js";
 import { Err, Ok, type Result } from "../result.js";
-import { createBasicTextInput } from "../util.js";
+import { createBasicTextInput } from "../util/modal.js";
 
 export const Feedback: Command = {
     data: {
@@ -24,7 +24,7 @@ export const Feedback: Command = {
         ],
     },
     handler: async function execute(interaction: ChatInputCommandInteraction): Promise<Result> {
-        debug(`Handling '${this.data.name}' command`);
+        debug("Handling 'feedback' command");
 
         const feedbackType = interaction.options.getString("type", true);
 

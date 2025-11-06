@@ -16,14 +16,40 @@ datasource db {
 }
 
 model Feedback {
-    id                  Int @id @default(autoincrement())
-    type                FeedbackType
-    authorId            String
-    message             String
+    id              Int             @id @default(autoincrement())
+    type            FeedbackType
+    authorId        String
+    message         String
+    createdAt       DateTime        @default(now())
+
+    @@index([type, authorId, createdAt])
 }
 
 enum FeedbackType {
     BUG
     FEATURE
     GENERAL
+}
+
+model Quote {
+    id              Int             @id @default(autoincrement())
+    token           String
+    creatorId       String
+    context         String?
+    createdAt       DateTime        @default(now())
+
+    statements      QuoteStatement[]
+
+    @@index([token, creatorId, createdAt])
+}
+
+model QuoteStatement {
+    id              Int             @id @default(autoincrement())
+    quoteId         Int
+    quote           Quote           @relation(fields: [])
+    text            String
+    authorId        String
+    order           Int // Position of quote in conversation
+
+    @@index([quoteId, authorId, order])
 }
