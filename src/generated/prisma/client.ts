@@ -48,3 +48,13 @@ path.join(process.cwd(), "src/generated/prisma/libquery_engine-rhel-openssl-3.0.
  * 
  */
 export type Feedback = Prisma.FeedbackModel
+/**
+ * Model Quote
+ * 
+ */
+export type Quote = Prisma.QuoteModel
+/**
+ * Model QuoteStatement
+ * 
+ */
+export type QuoteStatement = Prisma.QuoteStatementModel

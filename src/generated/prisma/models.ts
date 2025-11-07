@@ -8,4 +8,6 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/Feedback.js'
+export type * from './models/Quote.js'
+export type * from './models/QuoteStatement.js'
 export type * from './commonInputTypes.js'

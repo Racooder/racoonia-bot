@@ -38,6 +38,7 @@ export type FeedbackMinAggregateOutputType = {
   type: $Enums.FeedbackType | null
   authorId: string | null
   message: string | null
+  createdAt: Date | null
 }
 
 export type FeedbackMaxAggregateOutputType = {
@@ -45,6 +46,7 @@ export type FeedbackMaxAggregateOutputType = {
   type: $Enums.FeedbackType | null
   authorId: string | null
   message: string | null
+  createdAt: Date | null
 }
 
 export type FeedbackCountAggregateOutputType = {
@@ -52,6 +54,7 @@ export type FeedbackCountAggregateOutputType = {
   type: number
   authorId: number
   message: number
+  createdAt: number
   _all: number
 }
 
@@ -69,6 +72,7 @@ export type FeedbackMinAggregateInputType = {
   type?: true
   authorId?: true
   message?: true
+  createdAt?: true
 }
 
 export type FeedbackMaxAggregateInputType = {
@@ -76,6 +80,7 @@ export type FeedbackMaxAggregateInputType = {
   type?: true
   authorId?: true
   message?: true
+  createdAt?: true
 }
 
 export type FeedbackCountAggregateInputType = {
@@ -83,6 +88,7 @@ export type FeedbackCountAggregateInputType = {
   type?: true
   authorId?: true
   message?: true
+  createdAt?: true
   _all?: true
 }
 
@@ -177,6 +183,7 @@ export type FeedbackGroupByOutputType = {
   type: $Enums.FeedbackType
   authorId: string
   message: string
+  createdAt: Date
   _count: FeedbackCountAggregateOutputType | null
   _avg: FeedbackAvgAggregateOutputType | null
   _sum: FeedbackSumAggregateOutputType | null
@@ -207,6 +214,7 @@ export type FeedbackWhereInput = {
   type?: Prisma.EnumFeedbackTypeFilter<"Feedback"> | $Enums.FeedbackType
   authorId?: Prisma.StringFilter<"Feedback"> | string
   message?: Prisma.StringFilter<"Feedback"> | string
+  createdAt?: Prisma.DateTimeFilter<"Feedback"> | Date | string
 }
 
 export type FeedbackOrderByWithRelationInput = {
@@ -214,6 +222,7 @@ export type FeedbackOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type FeedbackWhereUniqueInput = Prisma.AtLeast<{
@@ -224,6 +233,7 @@ export type FeedbackWhereUniqueInput = Prisma.AtLeast<{
   type?: Prisma.EnumFeedbackTypeFilter<"Feedback"> | $Enums.FeedbackType
   authorId?: Prisma.StringFilter<"Feedback"> | string
   message?: Prisma.StringFilter<"Feedback"> | string
+  createdAt?: Prisma.DateTimeFilter<"Feedback"> | Date | string
 }, "id">
 
 export type FeedbackOrderByWithAggregationInput = {
@@ -231,6 +241,7 @@ export type FeedbackOrderByWithAggregationInput = {
   type?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   _count?: Prisma.FeedbackCountOrderByAggregateInput
   _avg?: Prisma.FeedbackAvgOrderByAggregateInput
   _max?: Prisma.FeedbackMaxOrderByAggregateInput
@@ -246,12 +257,14 @@ export type FeedbackScalarWhereWithAggregatesInput = {
   type?: Prisma.EnumFeedbackTypeWithAggregatesFilter<"Feedback"> | $Enums.FeedbackType
   authorId?: Prisma.StringWithAggregatesFilter<"Feedback"> | string
   message?: Prisma.StringWithAggregatesFilter<"Feedback"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Feedback"> | Date | string
 }
 
 export type FeedbackCreateInput = {
   type: $Enums.FeedbackType
   authorId: string
   message: string
+  createdAt?: Date | string
 }
 
 export type FeedbackUncheckedCreateInput = {
@@ -259,12 +272,14 @@ export type FeedbackUncheckedCreateInput = {
   type: $Enums.FeedbackType
   authorId: string
   message: string
+  createdAt?: Date | string
 }
 
 export type FeedbackUpdateInput = {
   type?: Prisma.EnumFeedbackTypeFieldUpdateOperationsInput | $Enums.FeedbackType
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackUncheckedUpdateInput = {
@@ -272,6 +287,7 @@ export type FeedbackUncheckedUpdateInput = {
   type?: Prisma.EnumFeedbackTypeFieldUpdateOperationsInput | $Enums.FeedbackType
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackCreateManyInput = {
@@ -279,12 +295,14 @@ export type FeedbackCreateManyInput = {
   type: $Enums.FeedbackType
   authorId: string
   message: string
+  createdAt?: Date | string
 }
 
 export type FeedbackUpdateManyMutationInput = {
   type?: Prisma.EnumFeedbackTypeFieldUpdateOperationsInput | $Enums.FeedbackType
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackUncheckedUpdateManyInput = {
@@ -292,6 +310,7 @@ export type FeedbackUncheckedUpdateManyInput = {
   type?: Prisma.EnumFeedbackTypeFieldUpdateOperationsInput | $Enums.FeedbackType
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type FeedbackCountOrderByAggregateInput = {
@@ -299,6 +318,7 @@ export type FeedbackCountOrderByAggregateInput = {
   type?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type FeedbackAvgOrderByAggregateInput = {
@@ -310,6 +330,7 @@ export type FeedbackMaxOrderByAggregateInput = {
   type?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type FeedbackMinOrderByAggregateInput = {
@@ -317,6 +338,7 @@ export type FeedbackMinOrderByAggregateInput = {
   type?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type FeedbackSumOrderByAggregateInput = {
@@ -329,6 +351,10 @@ export type EnumFeedbackTypeFieldUpdateOperationsInput = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -346,6 +372,7 @@ export type FeedbackSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   type?: boolean
   authorId?: boolean
   message?: boolean
+  createdAt?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -353,6 +380,7 @@ export type FeedbackSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   type?: boolean
   authorId?: boolean
   message?: boolean
+  createdAt?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -360,6 +388,7 @@ export type FeedbackSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   type?: boolean
   authorId?: boolean
   message?: boolean
+  createdAt?: boolean
 }, ExtArgs["result"]["feedback"]>
 
 export type FeedbackSelectScalar = {
@@ -367,9 +396,10 @@ export type FeedbackSelectScalar = {
   type?: boolean
   authorId?: boolean
   message?: boolean
+  createdAt?: boolean
 }
 
-export type FeedbackOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "type" | "authorId" | "message", ExtArgs["result"]["feedback"]>
+export type FeedbackOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "type" | "authorId" | "message" | "createdAt", ExtArgs["result"]["feedback"]>
 
 export type $FeedbackPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Feedback"
@@ -379,6 +409,7 @@ export type $FeedbackPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     type: $Enums.FeedbackType
     authorId: string
     message: string
+    createdAt: Date
   }, ExtArgs["result"]["feedback"]>
   composites: {}
 }
@@ -806,6 +837,7 @@ export interface FeedbackFieldRefs {
   readonly type: Prisma.FieldRef<"Feedback", 'FeedbackType'>
   readonly authorId: Prisma.FieldRef<"Feedback", 'String'>
   readonly message: Prisma.FieldRef<"Feedback", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Feedback", 'DateTime'>
 }
     
 

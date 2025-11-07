@@ -1,6 +1,7 @@
 import { EmbedBuilder } from "discord.js";
 import { config } from "./config.js";
 import { sendToChannel } from "./util/client.js";
+import colors from "./colors.js";
 
 const format = {
     Reset: "\x1b[0m",
@@ -50,7 +51,7 @@ export function warn(message: string): void {
 
 export function error(message: string | Error, preventDiscordLogging = false): void {
     if (message instanceof Error) {
-        console.error(`${format.FgRed}${message.name}: ${message.message}${format.Reset}\n${message.stack}`);
+        console.error(`${format.FgRed}${message.stack}${format.Reset}`);
     } else {
         console.error(`${format.FgRed}${message}${format.Reset}`);
     }
@@ -73,6 +74,7 @@ export async function errorToDiscord(message: string | Error): Promise<void> {
         embed
             .setTitle(`${message.name}: ${message.message}`)
             .setDescription(`\`\`\`${message.stack}\`\`\``)
+            .setColor(colors.ERROR_EMBED)
     }
 
     debug("Sending error message")

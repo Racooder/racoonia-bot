@@ -21,7 +21,7 @@
     "scripts": {
         "migrate": "npx prisma migrate dev",
         "view-db": "npx prisma studio",
-        "dev": "tsx src/index.ts",
+        "dev": "npx prisma migrate dev && tsx src/index.ts",
         "start": "node dist/index.js",
         "build": "tsup src/index.ts --minify --format esm --out-dir dist --clean"
     }

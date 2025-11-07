@@ -46,7 +46,7 @@ model Quote {
 model QuoteStatement {
     id              Int             @id @default(autoincrement())
     quoteId         Int
-    quote           Quote           @relation(fields: [])
+    quote           Quote           @relation(fields: [quoteId], references: [id], onDelete: Cascade)
     text            String
     authorId        String
     order           Int // Position of quote in conversation

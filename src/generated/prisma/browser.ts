@@ -21,3 +21,13 @@ export * from './enums.js';
  * 
  */
 export type Feedback = Prisma.FeedbackModel
+/**
+ * Model Quote
+ * 
+ */
+export type Quote = Prisma.QuoteModel
+/**
+ * Model QuoteStatement
+ * 
+ */
+export type QuoteStatement = Prisma.QuoteStatementModel

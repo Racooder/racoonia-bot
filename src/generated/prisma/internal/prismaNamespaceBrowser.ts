@@ -48,7 +48,9 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-  Feedback: 'Feedback'
+  Feedback: 'Feedback',
+  Quote: 'Quote',
+  QuoteStatement: 'QuoteStatement'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -71,10 +73,33 @@ export const FeedbackScalarFieldEnum = {
   id: 'id',
   type: 'type',
   authorId: 'authorId',
-  message: 'message'
+  message: 'message',
+  createdAt: 'createdAt'
 } as const
 
 export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typeof FeedbackScalarFieldEnum]
+
+
+export const QuoteScalarFieldEnum = {
+  id: 'id',
+  token: 'token',
+  creatorId: 'creatorId',
+  context: 'context',
+  createdAt: 'createdAt'
+} as const
+
+export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]
+
+
+export const QuoteStatementScalarFieldEnum = {
+  id: 'id',
+  quoteId: 'quoteId',
+  text: 'text',
+  authorId: 'authorId',
+  order: 'order'
+} as const
+
+export type QuoteStatementScalarFieldEnum = (typeof QuoteStatementScalarFieldEnum)[keyof typeof QuoteStatementScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -91,4 +116,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
